@@ -100,10 +100,17 @@ class Map(ipyleaflet.Map):
         geo_json = ipyleaflet.GeoJSON(data=data, style=style, name=layer_name)
         self.add_layer(geo_json)
 
-    def add_shp(self, in_shp, style=None, layer_name="Untitled"):
+    def add_shapefile(self, in_shp, style=None, layer_name="Untitled"):
+        """Adds a shapefile layer to the map.
 
+        Args:
+            in_shp (str): The file path to the input shapefile.
+            style (dict, optional): The style dictionary. Defaults to None.
+            layer_name (str, optional): The layer name for the shapefile layer. Defaults to "Untitled".
+        """
         geojson = shp_to_geojson(in_shp)
         self.add_geojson(geojson, style=style, layer_name=layer_name)
+
 
 def shp_to_geojson(in_shp, out_geojson=None):
     """Converts a shapefile to GeoJSON.
@@ -125,6 +132,7 @@ def shp_to_geojson(in_shp, out_geojson=None):
 
     if not os.path.exists(in_shp):
         raise FileNotFoundError("The provided shapefile could not be found.")
+        print(in_shp)
 
     sf = shapefile.Reader(in_shp)
     geojson = sf.__geo_interface__
@@ -137,7 +145,7 @@ def shp_to_geojson(in_shp, out_geojson=None):
         if not os.path.exists(out_dir):
             os.makedirs(out_dir)
         with open(out_geojson, "w") as f:
-            f.write(json.dumps(geojson)) 
+            f.write(json.dumps(geojson))    
 
 
    
