@@ -1,11 +1,16 @@
-"""Main module."""
+"""Main module for the Geodemo_ZW package."""
 
 import os
 import ipyleaflet
 from ipyleaflet import FullScreenControl, LayersControl, DrawControl, MeasureControl, ScaleControl, TileLayer
-# from .utils import random_string
+from .utils import random_string
 
 class Map(ipyleaflet.Map):
+    """[This Map class inherits from ipyleaflet Map class.]
+
+    Args:
+        ipyleaflet ([ipyleaflet.Map]): [An ipyleaflet map]
+    """     
 
     def __init__(self, **kwargs):
 
@@ -69,8 +74,8 @@ class Map(ipyleaflet.Map):
 
         import json
 
-        # if layer_name == "Untitled":
-        #     layer_name = "Untitled " + random_string()
+        if layer_name == "Untitled":
+            layer_name = "Untitled_" + random_string()
 
         if isinstance(in_geojson, str):
 

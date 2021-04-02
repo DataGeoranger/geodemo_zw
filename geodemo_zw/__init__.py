@@ -5,3 +5,4 @@ __email__ = 'zhaowei.wang1987@gmail.com'
 __version__ = '0.0.4'
 
 from .geodemo_zw import *
+from .util import *
