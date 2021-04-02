@@ -46,6 +46,7 @@ nav:
     - Report Issues: https://github.com/DataGeoranger/geodemo_zw/issues
     - API Reference:
           - geodemo_zw module: geodemo_zw.md
+          - utils module: utils.md
     - Notebooks: 
           - Notebooks/ipyleaflet_intro.ipynb
           - Notebooks/folium_intro.ipynb
