@@ -51,4 +51,5 @@ nav:
           - Notebooks/ipyleaflet_intro.ipynb
           - Notebooks/folium_intro.ipynb
           - Notebooks/geodemo_intro.ipynb
-          - Notebooks/add_shapefile.ipynb       
+          - Notebooks/add_shapefile.ipynb
+          - Notebooks/earthengine_intro.ipynb    
